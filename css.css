@@ -1,0 +1,19 @@
+@charset "utf-8";
+.TopArea {
+  display :flex;
+  height: 200px;
+}
+.LeftTopArea {
+  border :2px  solid;
+  width:100%;
+}
+.RightTopArea {
+  border :2px  solid;
+   width:100%;
+}
+.BottomArea {
+  border :2px  solid;
+  height: 600px;
+}/* CSS Docume
+nt */
+
