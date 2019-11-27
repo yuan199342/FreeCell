@@ -86,19 +86,18 @@ function createCard() {
 		
 		
 		decks.forEach((card,cardindex) => {
-			const cardElem = document.createElement('div')
+			const cardElem = document.createElement('img')
 			cardElem.style.position = 'absolute'
 			cardElem.style.width = '172px'
 			cardElem.style.height = '240px'
 			cardElem.style.border ='1px solid white'
 			cardElem.style.color = transformNumberToBackgroundColor(card)
-			cardElem.style.backgroundImage = `url("ui/${card}.svg")`
+			cardElem.src = `ui/${card}.svg`
 			cardElem.style.padding = '0px'
 			cardElem.style.borderRadius = '0px'
 			cardElem.style.top =cardindex * 30 +'px'
 			cardElem.cardNumber = card
 			cardElem.deckIndex = index
-			//cardElem.innerHTML = `<img src="ui/${card}.svg">`
 			if(cardindex === decks.length -1){
 				cardElem.draggable = true
 			}
@@ -193,7 +192,7 @@ function dropCard(e){
 	//放完 A 後 其他牌放上右上牌區
 	if((e.target.cardNumber == (data.cardNumber -1)) && e.target.parentElement.parentElement == RightTopArea){
 		e.target.parentElement.appendChild(data)
-		data.style.top = '0px'
+		data.styldie.top = '0px'
 		console.log('放完 A 後 其他牌放上右上牌區')
 	}
 	
