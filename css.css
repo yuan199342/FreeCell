@@ -1,4 +1,13 @@
 @charset "utf-8";
+body {
+	background-color: #E4E4E4;
+    font-family: 'Ubuntu', sans-serif;
+}
+.nav {
+	display: flex;
+	justify-content: space-between;
+}
+
 .TopArea {
   display :flex;
   height: 200px;
@@ -14,6 +23,4 @@
 .BottomArea {
   border :2px  solid;
   height: 600px;
-}/* CSS Docume
-nt */
-
+}

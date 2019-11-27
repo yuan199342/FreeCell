@@ -80,7 +80,7 @@ function createCard() {
 		bottomDeckElem.id =`bottom-deck-elem-${index}`
 		bottomDeckElem.style.position = 'relative'
 		bottomDeckElem.style.height = '600px'
-		bottomDeckElem.style.width = '152px'
+		bottomDeckElem.style.width = '172px'
 		bottomDeckElem.style.fontSize = '16px'
 		bottomDeckElem.style.userSelect = 'none'
 		
@@ -88,17 +88,17 @@ function createCard() {
 		decks.forEach((card,cardindex) => {
 			const cardElem = document.createElement('div')
 			cardElem.style.position = 'absolute'
-			cardElem.style.width = '130px'
-			cardElem.style.height = '200px'
+			cardElem.style.width = '172px'
+			cardElem.style.height = '240px'
 			cardElem.style.border ='1px solid white'
 			cardElem.style.color = transformNumberToBackgroundColor(card)
-			cardElem.style.backgroundColor = 'black'
-			cardElem.style.padding = '5px'
-			cardElem.style.borderRadius = '5px'
+			cardElem.style.backgroundImage = `url("ui/${card}.svg")`
+			cardElem.style.padding = '0px'
+			cardElem.style.borderRadius = '0px'
 			cardElem.style.top =cardindex * 30 +'px'
 			cardElem.cardNumber = card
 			cardElem.deckIndex = index
-			cardElem.innerHTML = changeNumberToPoker(card) + transformNumberToColor(card)
+			//cardElem.innerHTML = `<img src="ui/${card}.svg">`
 			if(cardindex === decks.length -1){
 				cardElem.draggable = true
 			}
@@ -136,7 +136,6 @@ function checkLastCard(){
 	var deck  = BottomArea.firstChild
 	for(i=0;i<BottomArea.childElementCount;i++){
 		deck.lastElementChild.draggable = true
-		console.log(deck.lastElementChild.draggable)
 		deck = deck.nextElementSibling
 	}
 }
@@ -212,8 +211,12 @@ container.addEventListener('drag' ,dragCard)
 container.addEventListener('drop' ,dropCard)
 container.addEventListener('dragover' ,allowDrop)
 
+function pause(){
+	container.removeEventListener('drag' ,dragCard)
+}
 
-
-
+function continueTime(){
+	container.addEventListener('drag' ,dragCard)
+}
 
 
