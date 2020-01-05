@@ -12,21 +12,30 @@
 	<div class="logo"><p >FREE<span>CELL</span></p></div>
 	
 	<div class="timebar">
-	<div class="Qundo">
+	<div class="Qundo" id="callMenu">
 	<img  src="ui/icon-question.svg" alt="question"></div>
-	<div class="time"><h1>Time:</h1></div>
-	<div class="Qundo"><img  src="ui/icon-undo.svg" alt="undo"></div>
+	<div class="time"><h1>Time:<span class="mins"></span></h1></div>
+	<div class="Qundo" id="undo"><img  src="ui/icon-undo.svg" alt="undo"></div>
 	</div>
 	<div class="navbar">
-		<h1>SCORE:</h1>
+		<h1>SCORE:<span class="score"></span></h1>
 	</div>
 </div>
+
 <div class ="container">
 <div class="TopArea">
 <div class="LeftTopArea"></div>
 <div class="RightTopArea"></div>
 </div>
 <div class="BottomArea"></div>
+</div>
+<div class="menu">
+	<h2>FREE<span>CELL</span></h2>
+	<button type="button" id="btnNewgame">Quit and star a new game</button>
+	<button type="button" id="btnRestart">Restart This Game</button>
+	<button type="button" id="btnBack">Keep playing</button>
+</div>
+<div class="mask">
 </div>
 <script src="js.js"></script>
 </body>
